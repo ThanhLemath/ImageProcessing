@@ -7,6 +7,10 @@ AB = C
 Which is naturally underdetermined if B is not full rank<br>
 Then we apply the L1 norm to find the X solution matrices approximating A through GUROBI, leveraging the created sparsity<br>
 Then we perform backwards DCT, renormalize the image values and create the approximate output image<br>
+![Input Image](ImageProcessing/Images/clay-banks-BnDI_MVomAI-unsplash.jpg)
+![Output Image](ImageProcessing/Reconstruction/reconstructed.jpg)
+
+
 
 Dependencies<br>
 GUROBI (license), FFTW, ATL and Eigen are necessary to run the program<br>
