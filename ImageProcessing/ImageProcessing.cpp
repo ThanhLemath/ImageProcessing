@@ -120,7 +120,7 @@ bool SaveMatrixAsImage(
         
         for (int j = 0; j < w; ++j) {
             double v_b = X_B(i, j);
-            double clamped_v_b = std::clamp(v_b, 0.00, 255.00); // Not letting the values 
+            double clamped_v_b = std::clamp(v_b, 0.00, 255.00); // Not letting the values go outside of range
             unsigned char g_b = static_cast<unsigned char>(std::round(clamped_v_b)); // Rounds up the channel color value to store into the corresponding buffer 
             
             double v_g = X_G(i, j);
@@ -138,7 +138,6 @@ bool SaveMatrixAsImage(
             row[offs + 0] = g_b; // B
             row[offs + 1] = g_g; // G
             row[offs + 2] = g_r; // R
-            // Originally this was meant to deal with all 3 channels, however I limited it to grayscale due to computational limitations
         }
     }
 
